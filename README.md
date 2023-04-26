@@ -1,3 +1,10 @@
-#npm init
-#npm i --save-exact express@4.17.1
-#create .gitignore file
+- npm init
+- npm i --save-exact express@4.17.1
+- create .gitignore file
+- npm i --save-exact ejs@3.1.6
+- npm i --save-exact body-parser@1.19.0
+- npm i --save-exact nodemon@2.0.12
+- npm install --save-exact @babel/core@7.15.5
+- npm install --save-exact @babel/node@7.15.4
+- npm install --save-exact @babel/preset-env@7.15.6
+- package.json: change script start => nodemon --exec babel-node src/server.js
