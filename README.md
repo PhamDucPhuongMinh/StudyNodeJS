@@ -9,3 +9,4 @@
 - npm i --save-exact @babel/preset-env@7.15.6
 - package.json: change script start => nodemon --exec babel-node src/server.js
 - npm i --save-exact dotenv@10.0.0
+- npm i --save-exact mysql2@2.3.0
