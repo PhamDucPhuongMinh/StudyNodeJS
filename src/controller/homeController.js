@@ -13,7 +13,7 @@ const getHomePage = async (req, res) => {
         address: row.address,
       })
     );
-    res.render("index.ejs", { dataUsers: JSON.stringify(data) });
+    res.render("index.ejs", { dataUsers: data });
   });
 };
 
