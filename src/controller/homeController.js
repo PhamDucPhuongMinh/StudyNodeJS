@@ -2,19 +2,19 @@ import connection from "../configs/connectDB";
 
 const getHomePage = async (req, res) => {
   //logic
-  const data = [];
-  connection.query("SELECT * FROM `users`", function (err, results, fields) {
-    results.map((row) =>
-      data.push({
-        id: row.id,
-        firstName: row.firstName,
-        lastName: row.lastName,
-        email: row.email,
-        address: row.address,
-      })
-    );
-    res.render("index.ejs", { dataUsers: data });
-  });
+  const [rows, fields] = await connection.execute("SELECT * FROM users");
+  res.render("index.ejs", { dataUsers: rows });
 };
 
-export { getHomePage };
+const getUserDetailPage = async (req, res) => {
+  //logic
+  const { id } = req.params;
+  const [rows, fields] = await connection.execute(
+    "SELECT * FROM users where id=?",
+    [id]
+  );
+  console.log(rows);
+  res.render("userDetail.ejs", { dataUser: rows[0] });
+};
+
+export { getHomePage, getUserDetailPage };
